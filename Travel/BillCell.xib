@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="abQ-u7-ftO" customClass="BillCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="abQ-u7-ftO" id="rMe-XA-zDX">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LWB-fb-Wyn">
+                        <rect key="frame" x="7" y="7" width="46" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="46" id="K4L-vt-CV0"/>
+                            <constraint firstAttribute="width" constant="46" id="j9T-ex-sAt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="93%满意" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-za-Pzy">
+                        <rect key="frame" x="257" y="36" width="55" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="v5m-90-88w"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海南五日游，春节最高减6000，8大景点CDF免税。销售冠军，家庭免担保。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaU-ad-zrz">
+                        <rect key="frame" x="57" y="18" width="179" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="￥28699" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCM-DX-iGC">
+                        <rect key="frame" x="247" y="10" width="65" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="NYT-gQ-Acp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.78908408149171272" green="0.24611707552732101" blue="0.486270269946596" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XaU-ad-zrz" firstAttribute="leading" secondItem="LWB-fb-Wyn" secondAttribute="trailing" constant="4" id="2qI-sv-dn0"/>
+                    <constraint firstAttribute="trailing" secondItem="kYu-za-Pzy" secondAttribute="trailing" constant="8" id="7eW-02-Irp"/>
+                    <constraint firstItem="LWB-fb-Wyn" firstAttribute="leading" secondItem="rMe-XA-zDX" secondAttribute="leading" constant="7" id="Agj-Gh-ZO4"/>
+                    <constraint firstAttribute="trailing" secondItem="sCM-DX-iGC" secondAttribute="trailing" constant="8" id="F6f-qs-piC"/>
+                    <constraint firstAttribute="bottom" secondItem="kYu-za-Pzy" secondAttribute="bottom" constant="2" id="GfP-6D-CDR"/>
+                    <constraint firstItem="LWB-fb-Wyn" firstAttribute="top" secondItem="rMe-XA-zDX" secondAttribute="top" constant="7" id="K1V-RC-DSi"/>
+                    <constraint firstItem="sCM-DX-iGC" firstAttribute="leading" secondItem="XaU-ad-zrz" secondAttribute="trailing" constant="11" id="gIB-9x-asp"/>
+                    <constraint firstItem="XaU-ad-zrz" firstAttribute="leading" secondItem="rMe-XA-zDX" secondAttribute="leading" constant="57" id="uh9-A7-QeG"/>
+                    <constraint firstItem="sCM-DX-iGC" firstAttribute="top" secondItem="rMe-XA-zDX" secondAttribute="top" constant="10" id="xRV-k2-UW7"/>
+                    <constraint firstItem="XaU-ad-zrz" firstAttribute="top" secondItem="rMe-XA-zDX" secondAttribute="top" constant="18" id="zfe-BY-jDK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImage" destination="LWB-fb-Wyn" id="Bec-Ar-T9E"/>
+                <outlet property="contentLabel" destination="XaU-ad-zrz" id="Ixf-eM-dlr"/>
+                <outlet property="percentLabel" destination="kYu-za-Pzy" id="n3x-8E-Hdn"/>
+                <outlet property="priceLabel" destination="sCM-DX-iGC" id="JnY-nD-rax"/>
+            </connections>
+            <point key="canvasLocation" x="114" y="323"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

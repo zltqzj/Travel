@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sYV-QG-H26" customClass="CustomCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OPH-RZ-dgn">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xze-st-aX0">
+                        <rect key="frame" x="75" y="112" width="67" height="30"/>
+                        <color key="backgroundColor" red="0.30092757390000002" green="0.76437327349999995" blue="0.63671621950000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="2li-Pi-yy0"/>
+                            <constraint firstAttribute="width" constant="67" id="6ph-8r-Ijt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="家庭亲子">
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="OPH-RZ-dgn" secondAttribute="bottom" id="0mb-VM-eHV"/>
+                <constraint firstAttribute="trailing" secondItem="Xze-st-aX0" secondAttribute="trailing" constant="8" id="I3q-Vb-jxg"/>
+                <constraint firstAttribute="bottom" secondItem="Xze-st-aX0" secondAttribute="bottom" constant="8" id="Tua-Ix-UWr"/>
+                <constraint firstAttribute="trailing" secondItem="OPH-RZ-dgn" secondAttribute="trailing" id="Yaf-sf-doi"/>
+                <constraint firstItem="OPH-RZ-dgn" firstAttribute="top" secondItem="sYV-QG-H26" secondAttribute="top" id="j0m-Az-3TG"/>
+                <constraint firstItem="OPH-RZ-dgn" firstAttribute="leading" secondItem="sYV-QG-H26" secondAttribute="leading" id="uSB-9a-5Pd"/>
+            </constraints>
+            <size key="customSize" width="150" height="156"/>
+            <connections>
+                <outlet property="descButton" destination="Xze-st-aX0" id="KzB-j0-FhH"/>
+                <outlet property="descImage" destination="OPH-RZ-dgn" id="g2T-xN-Ov8"/>
+            </connections>
+            <point key="canvasLocation" x="256" y="262"/>
+        </collectionViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

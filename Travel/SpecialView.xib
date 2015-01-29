@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IST-c7-Xdd" customClass="SpecialView">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7se-zg-nqv">
+                    <rect key="frame" x="68" y="33" width="64" height="84"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="02P-QP-Wdf"/>
+                        <constraint firstAttribute="height" constant="84" id="p4N-GD-Z3Z"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccb-ns-aFl">
+                    <rect key="frame" x="164" y="101" width="26" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="40V-jU-Ul6"/>
+                        <constraint firstAttribute="height" constant="26" id="AZw-LK-PYc"/>
+                    </constraints>
+                    <state key="normal" image="blank.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您有未绑定红包" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7U-sO-CHN">
+                    <rect key="frame" x="0.0" y="134" width="200" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="酒店" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHC-hF-nb5">
+                    <rect key="frame" x="8" y="0.0" width="194" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="fbQ-Re-Rsc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VHC-hF-nb5" secondAttribute="trailing" constant="-2" id="0rs-p0-0sZ"/>
+                <constraint firstItem="U7U-sO-CHN" firstAttribute="leading" secondItem="IST-c7-Xdd" secondAttribute="leading" id="1nk-X4-loK"/>
+                <constraint firstAttribute="bottom" secondItem="U7U-sO-CHN" secondAttribute="bottom" id="BOY-nr-ZGv"/>
+                <constraint firstItem="VHC-hF-nb5" firstAttribute="leading" secondItem="IST-c7-Xdd" secondAttribute="leading" constant="8" id="BjQ-0s-YAZ"/>
+                <constraint firstAttribute="trailing" secondItem="ccb-ns-aFl" secondAttribute="trailing" constant="10" id="KFw-I1-zaY"/>
+                <constraint firstItem="VHC-hF-nb5" firstAttribute="top" secondItem="IST-c7-Xdd" secondAttribute="top" id="RaE-0N-m8U"/>
+                <constraint firstAttribute="centerY" secondItem="7se-zg-nqv" secondAttribute="centerY" id="Xgl-Vg-vAI"/>
+                <constraint firstItem="U7U-sO-CHN" firstAttribute="top" secondItem="ccb-ns-aFl" secondAttribute="bottom" constant="7" id="ZoM-xU-oh8"/>
+                <constraint firstAttribute="trailing" secondItem="U7U-sO-CHN" secondAttribute="trailing" id="anB-NP-1CD"/>
+                <constraint firstAttribute="centerX" secondItem="7se-zg-nqv" secondAttribute="centerX" id="iZI-UR-ZcS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descLabel" destination="U7U-sO-CHN" id="AJ1-8w-Sjo"/>
+                <outlet property="imageview" destination="7se-zg-nqv" id="V5A-oh-ygr"/>
+                <outlet property="redBagBtn" destination="ccb-ns-aFl" id="5am-WC-Sfx"/>
+                <outlet property="titleLabel" destination="VHC-hF-nb5" id="0GD-lw-e1o"/>
+            </connections>
+            <point key="canvasLocation" x="162" y="366"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blank.png" width="60" height="60"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

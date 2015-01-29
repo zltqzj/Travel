@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>扫一扫</string>
+		<string>消息中心</string>
+	</array>
+	<array>
+		<string>我的订单</string>
+		<string>我的酒店点评</string>
+		<string>连锁酒店会员卡</string>
+		<string>我的旅行相册</string>
+		<string>我的攻略社区</string>
+		<string>我的骆驼书</string>
+		<string>我的发票</string>
+	</array>
+	<array>
+		<string>常用旅客</string>
+		<string>常用联系人</string>
+	</array>
+	<array>
+		<string>收藏</string>
+		<string>设置</string>
+	</array>
+	<array>
+		<string>关于</string>
+	</array>
+</array>
+</plist>

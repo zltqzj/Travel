@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5IY-SG-YJd" customClass="SellView">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tY0-lh-N18">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuc-Cv-eFq">
+                    <rect key="frame" x="8" y="102" width="184" height="19"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.96587966160000005" green="0.96587966160000005" blue="0.96587966160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IN-rG-ZaQ">
+                    <rect key="frame" x="8" y="122" width="184" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bL-ND-cDi">
+                    <rect key="frame" x="8" y="79" width="184" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="fsm-EU-gEI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.96587966160000005" green="0.96587966160000005" blue="0.96587966160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9bL-ND-cDi" secondAttribute="trailing" constant="8" id="0VI-m9-A4f"/>
+                <constraint firstItem="1IN-rG-ZaQ" firstAttribute="leading" secondItem="5IY-SG-YJd" secondAttribute="leading" constant="8" id="5Hc-2d-Z9N"/>
+                <constraint firstAttribute="bottom" secondItem="1IN-rG-ZaQ" secondAttribute="bottom" constant="10" id="D2A-26-nx2"/>
+                <constraint firstItem="1IN-rG-ZaQ" firstAttribute="top" secondItem="fuc-Cv-eFq" secondAttribute="bottom" constant="1" id="Ezl-2n-zxE"/>
+                <constraint firstAttribute="trailing" secondItem="1IN-rG-ZaQ" secondAttribute="trailing" constant="8" id="GhA-Jj-P6k"/>
+                <constraint firstItem="tY0-lh-N18" firstAttribute="leading" secondItem="5IY-SG-YJd" secondAttribute="leading" id="YVr-hZ-wrS"/>
+                <constraint firstAttribute="trailing" secondItem="fuc-Cv-eFq" secondAttribute="trailing" constant="8" id="cY1-jJ-JHs"/>
+                <constraint firstAttribute="bottom" secondItem="tY0-lh-N18" secondAttribute="bottom" id="eiB-CW-tO3"/>
+                <constraint firstAttribute="trailing" secondItem="tY0-lh-N18" secondAttribute="trailing" id="fnw-XQ-51h"/>
+                <constraint firstItem="tY0-lh-N18" firstAttribute="top" secondItem="5IY-SG-YJd" secondAttribute="top" id="hJH-VS-iNt"/>
+                <constraint firstItem="fuc-Cv-eFq" firstAttribute="top" secondItem="9bL-ND-cDi" secondAttribute="bottom" constant="2" id="jnA-wy-dJh"/>
+                <constraint firstItem="fuc-Cv-eFq" firstAttribute="leading" secondItem="5IY-SG-YJd" secondAttribute="leading" constant="8" id="o4s-Sk-QMO"/>
+                <constraint firstItem="9bL-ND-cDi" firstAttribute="leading" secondItem="5IY-SG-YJd" secondAttribute="leading" constant="8" id="zRy-ap-3LJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageview" destination="tY0-lh-N18" id="Ffw-mf-g02"/>
+                <outlet property="priceLabel" destination="1IN-rG-ZaQ" id="fOj-ui-bcu"/>
+                <outlet property="regionLabel" destination="fuc-Cv-eFq" id="84R-Ry-29E"/>
+                <outlet property="titleLabel" destination="9bL-ND-cDi" id="C7h-Ll-x7G"/>
+            </connections>
+            <point key="canvasLocation" x="243" y="-53"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
