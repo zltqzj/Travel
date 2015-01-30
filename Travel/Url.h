@@ -9,6 +9,8 @@
 #ifndef Travel_Url_h
 #define Travel_Url_h
 
+
+//  服务器推送地址 http://zhangshangxindai.duapp.com/Travel/ios_app/productionPush/push.php
 #define UPDATE_URL @"http://zhangshangxindai.duapp.com/Travel/ios_app/ios_update.php"
 
 // IPA下载地址
