@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13DD13C9E283401EE8E40E21 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DFD8402C04001E9B6656F4 /* libPods.a */; };
+		1C126C4F1A7B851B0050CA47 /* LXActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C126C4E1A7B851B0050CA47 /* LXActionSheet.m */; };
 		1C165A441A6CF10D001AFFB8 /* gray_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C165A431A6CF10D001AFFB8 /* gray_dot.png */; };
 		1C165A461A6CF634001AFFB8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C165A451A6CF634001AFFB8 /* CoreFoundation.framework */; };
 		1C165A481A6CF63C001AFFB8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C165A471A6CF63C001AFFB8 /* CFNetwork.framework */; };
@@ -2845,6 +2846,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C126C4D1A7B851B0050CA47 /* LXActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXActionSheet.h; sourceTree = "<group>"; };
+		1C126C4E1A7B851B0050CA47 /* LXActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXActionSheet.m; sourceTree = "<group>"; };
 		1C165A431A6CF10D001AFFB8 /* gray_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_dot.png; sourceTree = "<group>"; };
 		1C165A451A6CF634001AFFB8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		1C165A471A6CF63C001AFFB8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -5741,6 +5744,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C126C4C1A7B851A0050CA47 /* LXActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				1C126C4D1A7B851B0050CA47 /* LXActionSheet.h */,
+				1C126C4E1A7B851B0050CA47 /* LXActionSheet.m */,
+			);
+			path = LXActionSheet;
+			sourceTree = "<group>";
+		};
 		1C2870FC1A64B09800B22345 /* tuniuImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -6730,6 +6742,7 @@
 		1C2EDB441A59085F00BF4B70 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				1C2EDB6F1A5934AD00BF4B70 /* config.h */,
 				1C865E081A788C92004FBD56 /* Url.h */,
 				1C2EDB491A59085F00BF4B70 /* AppDelegate.h */,
 				1C2EDB4A1A59085F00BF4B70 /* AppDelegate.m */,
@@ -6745,7 +6758,6 @@
 				1C2EDB521A59085F00BF4B70 /* Images.xcassets */,
 				1C2EDB541A59085F00BF4B70 /* LaunchScreen.xib */,
 				1C2EDB451A59085F00BF4B70 /* Supporting Files */,
-				1C2EDB6F1A5934AD00BF4B70 /* config.h */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -6801,6 +6813,7 @@
 		1C2EDB701A5936D200BF4B70 /* ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				1C126C4C1A7B851A0050CA47 /* LXActionSheet */,
 				1CDA33641A6E4C07001873AB /* ZFCalendar */,
 				1C2B008C1A68FEA3000C0B12 /* UIViewExt */,
 				1C2B00881A68EF82000C0B12 /* DropDownMenu */,
@@ -11739,6 +11752,7 @@
 				1C2EDB6E1A591D8600BF4B70 /* MainPageViewController.m in Sources */,
 				1C865E071A788B7B004FBD56 /* NetUtils.m in Sources */,
 				1C4968A41A66067B00E65524 /* ProductDetailViewController.m in Sources */,
+				1C126C4F1A7B851B0050CA47 /* LXActionSheet.m in Sources */,
 				1C4968E21A66503900E65524 /* UIButton+Bootstrap.m in Sources */,
 				1CDA337F1A6E4C07001873AB /* NSDate+WQCalendarLogic.m in Sources */,
 				1CDA337D1A6E4C07001873AB /* CalendarViewController.m in Sources */,

@@ -10,10 +10,11 @@
 #import "config.h"
 #import "XHPathCover.h"
 #import "PathCoverDelegate.h"
+#import "LXActionSheet.h"
 #define TITLE_FONT_SIZE 18
 #define DESCRIBE_FONT_SIEZE 15
 
-@interface ProductDetailViewController ()<PathCoverDelegate>
+@interface ProductDetailViewController ()<PathCoverDelegate,LXActionSheetDelegate>
 
 @property (nonatomic, strong) XHPathCover *pathCover;
 
@@ -51,7 +52,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"产品详情";
-    SETTING_NAVGATION_STYLE
+   
+    
+    
+
+     SETTING_NAVGATION_STYLE
     [self.tabBarController.tabBar setHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     // 全屏的滚动
@@ -109,6 +114,9 @@
     [_myToolbar getButton:CGRectMake(10, 2, SCREEN_WIDTH/2-30, 40) type:UIButtonTypeCustom title:@"电话咨询" titleColor:[UIColor whiteColor] bgColor:RGB(247,176,88) image:nil];
     [_myToolbar getButton:CGRectMake(SCREEN_WIDTH/2, 2, SCREEN_WIDTH/2-10, 40) type:UIButtonTypeCustom title:@"立即预订" titleColor:[UIColor whiteColor] bgColor:RGB(254,128,162) image:nil];
     [self.view addSubview:_myToolbar];
+    
+    UIButton* btn1 = (UIButton*)_myToolbar.ToolbarItems[1] ;
+    [btn1 addTarget:self action:@selector(pay) forControlEvents:UIControlEventTouchUpInside];
 
     // 产品详情最下面的列表
     _productShotTable = [[UITableView alloc] initWithFrame:CGRectMake(0, ORINGIN_Y(_seg)+VIEW_HEIGHT(_seg), SCREEN_WIDTH, 44*5) style:UITableViewStylePlain];
@@ -150,13 +158,15 @@
         // [wself.pathCover setBackgroundImage:[UIImage imageNamed:@"AlbumHeaderBackgrounImage"]];
     }];
      */
-    
-    
-
-    
-   
 }
 
+
+-(void)pay{
+    NSLog(@"123");
+    LXActionSheet* actionSheet = [[LXActionSheet alloc] initWithTitle:@"支付方式" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"支付宝支付",@"微信支付",@"财付通支付"]];
+    [actionSheet showInView:self.view];
+    
+}
 
 
 -(UIButton*)getButton:(CGRect)rect type:(UIButtonType)type title:(NSString*)title titleColor:(UIColor*)titleColor bgColor:(UIColor*)bgColor image:(UIImage*)image{
@@ -228,15 +238,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 40;
