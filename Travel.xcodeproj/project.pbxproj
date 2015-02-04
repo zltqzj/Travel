@@ -2814,6 +2814,9 @@
 		1C8F020C1A81C3C3000B510B /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8F02001A81C3C3000B510B /* user.png */; };
 		1C8F020D1A81C3C3000B510B /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8F02011A81C3C3000B510B /* user@2x.png */; };
 		1C8F020E1A81C3C3000B510B /* user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8F02021A81C3C3000B510B /* user@3x.png */; };
+		1C8F02111A81CEAA000B510B /* MyTravelPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8F02101A81CEAA000B510B /* MyTravelPlanViewController.m */; };
+		1C8F021A1A81F858000B510B /* PlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8F02181A81F858000B510B /* PlanTableViewCell.m */; };
+		1C8F021B1A81F858000B510B /* PlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C8F02191A81F858000B510B /* PlanTableViewCell.xib */; };
 		1C9C7AFA1A59407300465190 /* icon_home_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C7AF81A59407300465190 /* icon_home_normal.png */; };
 		1C9C7AFB1A59407300465190 /* icon_home_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C7AF91A59407300465190 /* icon_home_press.png */; };
 		1CBAAC811A5A258000634A49 /* 1-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CBAAC7D1A5A258000634A49 /* 1-1.jpg */; };
@@ -5696,6 +5699,11 @@
 		1C8F02001A81C3C3000B510B /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		1C8F02011A81C3C3000B510B /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		1C8F02021A81C3C3000B510B /* user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@3x.png"; sourceTree = "<group>"; };
+		1C8F020F1A81CEAA000B510B /* MyTravelPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTravelPlanViewController.h; sourceTree = "<group>"; };
+		1C8F02101A81CEAA000B510B /* MyTravelPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTravelPlanViewController.m; sourceTree = "<group>"; };
+		1C8F02171A81F858000B510B /* PlanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanTableViewCell.h; sourceTree = "<group>"; };
+		1C8F02181A81F858000B510B /* PlanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanTableViewCell.m; sourceTree = "<group>"; };
+		1C8F02191A81F858000B510B /* PlanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanTableViewCell.xib; sourceTree = "<group>"; };
 		1C9C7AF81A59407300465190 /* icon_home_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_normal.png; sourceTree = "<group>"; };
 		1C9C7AF91A59407300465190 /* icon_home_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_press.png; sourceTree = "<group>"; };
 		1CBAAC7D1A5A258000634A49 /* 1-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1-1.jpg"; sourceTree = "<group>"; };
@@ -6883,6 +6891,8 @@
 				1C666E721A6CB632009E2985 /* CreateCustomTableViewController.m */,
 				1C865E091A78CCCC004FBD56 /* AboutViewController.h */,
 				1C865E0A1A78CCCC004FBD56 /* AboutViewController.m */,
+				1C8F020F1A81CEAA000B510B /* MyTravelPlanViewController.h */,
+				1C8F02101A81CEAA000B510B /* MyTravelPlanViewController.m */,
 			);
 			name = SubController;
 			sourceTree = "<group>";
@@ -6913,6 +6923,9 @@
 				1CE55B0A1A709935009571A8 /* city.plist */,
 				1CE55B0C1A70A6C5009571A8 /* ZJCustomPicker.h */,
 				1CE55B0D1A70A6C5009571A8 /* ZJCustomPicker.m */,
+				1C8F02171A81F858000B510B /* PlanTableViewCell.h */,
+				1C8F02181A81F858000B510B /* PlanTableViewCell.m */,
+				1C8F02191A81F858000B510B /* PlanTableViewCell.xib */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -11128,6 +11141,7 @@
 				1C4830561A5A4DF3004E338B /* nlp_train_help_bg.png in Resources */,
 				1C482DFB1A5A4DF3004E338B /* dsell_icon_p.png in Resources */,
 				1C48310A1A5A4DF4004E338B /* seg_left_normal.png in Resources */,
+				1C8F021B1A81F858000B510B /* PlanTableViewCell.xib in Resources */,
 				1C482D031A5A4DF3004E338B /* car_arrow_grey.png in Resources */,
 				1C482DB91A5A4DF3004E338B /* default_selected_route.png in Resources */,
 				1C482EEF1A5A4DF3004E338B /* hotel_comment_divider.png in Resources */,
@@ -11787,6 +11801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C8F021A1A81F858000B510B /* PlanTableViewCell.m in Sources */,
 				1C4968E11A66503900E65524 /* NSString+FontAwesome.m in Sources */,
 				1C34FDA21A5B77700008B934 /* MyBillViewController.m in Sources */,
 				1C2B008B1A68EF82000C0B12 /* MXPullDownMenu.m in Sources */,
@@ -11796,6 +11811,7 @@
 				1C34FD9F1A5B77000008B934 /* ModifyViewController.m in Sources */,
 				1C4825421A5A3D3F004E338B /* SpecialView.m in Sources */,
 				1C2877F61A64B79600B22345 /* ProductDetail.m in Sources */,
+				1C8F02111A81CEAA000B510B /* MyTravelPlanViewController.m in Sources */,
 				1C4833961A5A71DA004E338B /* XHSoundManager.m in Sources */,
 				1C2EDB6E1A591D8600BF4B70 /* MainPageViewController.m in Sources */,
 				1C865E071A788B7B004FBD56 /* NetUtils.m in Sources */,

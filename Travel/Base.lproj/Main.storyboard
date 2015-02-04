@@ -176,7 +176,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="divide_w.png" translatesAutoresizingMaskIntoConstraints="NO" id="nV1-pV-KiV">
-                                                    <rect key="frame" x="24" y="90" width="351" height="0.5"/>
+                                                    <rect key="frame" x="24" y="90" width="351" height="1"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -243,7 +243,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="divide_w.png" translatesAutoresizingMaskIntoConstraints="NO" id="n4K-3z-UDW">
-                                                    <rect key="frame" x="24" y="90" width="351" height="0.5"/>
+                                                    <rect key="frame" x="24" y="90" width="351" height="1"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -310,7 +310,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="divide_w.png" translatesAutoresizingMaskIntoConstraints="NO" id="fXW-JJ-m5P">
-                                                    <rect key="frame" x="24" y="91" width="351" height="0.5"/>
+                                                    <rect key="frame" x="24" y="91" width="351" height="1"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>

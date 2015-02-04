@@ -13,6 +13,7 @@
 #import "PathCoverDelegate.h"
 #import "ModifyViewController.h"
 #import "AboutViewController.h"
+#import "MyTravelPlanViewController.h"
 @interface ProfileViewController ()<PathCoverDelegate>
 
 @property (nonatomic, strong) XHPathCover *pathCover;
@@ -188,6 +189,12 @@
         AboutViewController* about = [[AboutViewController alloc ] init];
         [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
         [self.navigationController pushViewController:about animated:YES];
+    }
+    else if(indexPath.section ==1 && indexPath.row == 0){ // 我的行程
+        MyTravelPlanViewController* myPlan = [[MyTravelPlanViewController alloc] init];
+        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+
+        [self.navigationController pushViewController:myPlan animated:YES];
     }
   
 //    if ([cell.textLabel.text isEqualToString:@"关于"]) {
