@@ -84,13 +84,8 @@
         _tableView.tintColor = color;
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        
-        if (_titles.count*50 > SCREEN_HEIGHT) {
-            [_tableView setHeight:SCREEN_HEIGHT];
-        }
-        else{
-            [_tableView setHeight:_titles.count*50];
-        }
+        _tableView.scrollEnabled = NO;
+ 
         
         // 设置menu, 并添加手势
         self.backgroundColor = [UIColor whiteColor];
@@ -124,8 +119,6 @@
     // 得到tapIndex
     
     NSInteger tapIndex = touchPoint.x / (self.frame.size.width / _numOfMenu);
-    
-
     
     for (int i = 0; i < _numOfMenu; i++) {
         if (i != tapIndex) {
@@ -190,7 +183,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -263,7 +256,7 @@
         } completion:^(BOOL finished) {
             [view removeFromSuperview];
         }];
-        
+
     }
     complete();
     
@@ -273,19 +266,23 @@
 {
     if (show) {
         
-        
+        [_delegate ScrollEnable:NO];
+
         tableView.frame = CGRectMake(0, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
         [self.superview addSubview:tableView];
         
+      //  NSLog(@"%ld",(long)[tableView numberOfRowsInSection:0]);
+        CGFloat tableViewHeight =  [tableView numberOfRowsInSection:0] * tableView.rowHeight;
         
-        CGFloat tableViewHeight = ([tableView numberOfRowsInSection:0] > 5) ? (5 * tableView.rowHeight) : ([tableView numberOfRowsInSection:0] * tableView.rowHeight);
         
         [UIView animateWithDuration:0.2 animations:^{
             _tableView.frame = CGRectMake(0, self.frame.origin.y + self.frame.size.height, self.frame.size.width, tableViewHeight);
         }];
+       // NSLog(@"%f",_tableView.frame.size.height);
 
     } else {
-        
+        [_delegate ScrollEnable:YES];
+
         [UIView animateWithDuration:0.2 animations:^{
             _tableView.frame = CGRectMake(0, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
         } completion:^(BOOL finished) {
@@ -399,7 +396,7 @@
     UITableView *tableView = [UITableView new];
     
     tableView.frame = CGRectMake(point.x, point.y, self.frame.size.width, 0);
-    tableView.rowHeight = 36;
+    tableView.rowHeight = 45;
     
     return tableView;
 }

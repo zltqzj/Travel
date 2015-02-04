@@ -28,6 +28,7 @@ BackGroundViewStatus;
 @protocol MXPullDownMenuDelegate <NSObject>
 
 - (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row;
+-(void)ScrollEnable:(BOOL)scrollEnable;
 
 @end
 

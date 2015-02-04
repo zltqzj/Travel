@@ -142,4 +142,14 @@
 - (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row{
     
 }
+-(void)ScrollEnable:(BOOL)scrollEnable{
+    if (scrollEnable ==NO) {
+        _wholeScroll.scrollEnabled = NO;
+    }
+    else{
+        _wholeScroll.scrollEnabled = YES;
+    }
+}
+
+
 @end
