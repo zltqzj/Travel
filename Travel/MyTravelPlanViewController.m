@@ -10,6 +10,7 @@
 #import "config.h"
 #import "PlanTableViewCell.h"
 #import "UIButton+Bootstrap.h"
+#import "MakePlanViewController.h"
 @interface MyTravelPlanViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(strong,nonatomic) UITableView* planTable;
 @property(strong,nonatomic) NSArray* listData;
@@ -31,8 +32,9 @@
     [self.view addSubview:_planTable];
     
     UIButton*  customPlan = [[UIButton alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50)];
-    customPlan.layer.borderColor = [UIColor lightGrayColor].CGColor;
     [customPlan defaultStyle];
+    customPlan.layer.cornerRadius = 0;
+
     [customPlan setTitle:@"一键定制行程计划" forState:UIControlStateNormal];
     [self.view addSubview:customPlan];
     [customPlan addTarget:self action:@selector(customPlanDo) forControlEvents:UIControlEventTouchUpInside];
@@ -48,7 +50,9 @@
 }
 
 -(void)customPlanDo{
-    
+    MakePlanViewController* make = [[MakePlanViewController alloc] init];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController pushViewController:make animated:YES];
 }
 
 
@@ -78,6 +82,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 /*

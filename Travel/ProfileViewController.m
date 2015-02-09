@@ -179,6 +179,9 @@
     NSArray* descArr = _listData[indexPath.section];
     
     cell.textLabel.text = descArr[indexPath.row];
+      if(indexPath.section ==1 && indexPath.row == 0){ // 我的行程
+          cell.textLabel.textColor = ORANGE_COLOR;
+    }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -206,7 +209,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
 }
-/*
+
+ /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
