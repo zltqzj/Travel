@@ -16,12 +16,48 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3Ng-FH-syh" kind="relationship" relationship="rootViewController" id="0eL-S5-qZM"/>
+                        <segue destination="8Ae-ae-mYN" kind="relationship" relationship="rootViewController" id="qO9-yn-ag4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4B3-9S-Qf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240.5" y="1000.5"/>
+        </scene>
+        <!--Main Page View Controller-->
+        <scene sceneID="TQh-lz-2NQ">
+            <objects>
+                <viewController id="8Ae-ae-mYN" customClass="MainPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mi8-AA-7zo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uxl-3e-CMM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jaj-hD-IcS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="o5J-Ak-SIn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="o5J-Ak-SIn" secondAttribute="trailing" id="1an-T4-Low"/>
+                            <constraint firstAttribute="bottom" secondItem="o5J-Ak-SIn" secondAttribute="bottom" id="7yy-pu-JmP"/>
+                            <constraint firstItem="o5J-Ak-SIn" firstAttribute="top" secondItem="Jaj-hD-IcS" secondAttribute="top" id="IcV-6m-JdT"/>
+                            <constraint firstItem="o5J-Ak-SIn" firstAttribute="leading" secondItem="Jaj-hD-IcS" secondAttribute="leading" id="R1k-Fq-U4c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HiF-qw-a0t"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="myTable" destination="o5J-Ak-SIn" id="8fo-r6-ivE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKu-hN-rsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733.5" y="1012.5"/>
         </scene>
         <!--发现-->
         <scene sceneID="R5a-Bi-wIK">
@@ -581,26 +617,6 @@
             </objects>
             <point key="canvasLocation" x="982.5" y="272.5"/>
         </scene>
-        <!--Main Page View Controller-->
-        <scene sceneID="YJ2-2s-nJJ">
-            <objects>
-                <viewController id="3Ng-FH-syh" customClass="MainPageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LsU-Uz-X6u"/>
-                        <viewControllerLayoutGuide type="bottom" id="uIl-96-auB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="z66-6G-AFO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="iQR-QK-HHy"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bya-6U-9j6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="670" y="989"/>
-        </scene>
         <!--Tabbar View Controller-->
         <scene sceneID="wF2-8k-Fjm">
             <objects>
@@ -623,6 +639,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zd3-eU-pUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-392.5" y="1423.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rUL-Eb-MbC">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="KjH-Rc-kgP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EPj-qx-HJb"/>
+                        <viewControllerLayoutGuide type="bottom" id="krV-gQ-wUA"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Pjc-sp-FAv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIS-YY-OFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

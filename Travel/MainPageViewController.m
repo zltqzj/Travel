@@ -10,6 +10,7 @@
 #import "config.h"
 #import "SpecialView.h"
 #import "CreateCustomTableViewController.h"
+#import "MainTableViewCell.h"
 #define RED RGB(245,91,59)
 #define PINK RGB(130,100,239)
 #define ORANGE RGB(246,136,58)
@@ -70,19 +71,106 @@
 
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return SCREEN_HEIGHT-20-44-50;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MainTableViewCell" forIndexPath:indexPath];
+    cell.redBag.tag = 100;
+   // cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //[cell.redBag addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.gyBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.zdfBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+
+    [cell.jsycBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+
+    [cell.tjjpBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+
+    [cell.jdBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+
+    [cell.jpBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+
+    [cell.jrthBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+
+  
+    
+    [cell.lydjBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.jdmpBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.tgBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.yczjBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    [cell.glBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.dypBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.zmyBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.hcpBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.hwddBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    
+    return cell;
+}
+
+-(void)click:(id)sender{
+    NSLog(@"1231231");
+    UIButton* btn = (UIButton*)sender;
+    CABasicAnimation *k = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    k.fromValue = @(1);
+    k.toValue = @(0.8);
+    k.duration = 1;
+    k.autoreverses = YES;
+    // k.repeatCount = INT32_MAX;
+    [btn.layer addAnimation:k forKey:@"SHOW"]; // 点赞的动画
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     SETTING_NAVGATION_STYLE
     self.title = @"首页";
     [self.tabBarController.tabBar setHidden:NO];
 
+    _myTable.delegate = self;
+    _myTable.dataSource = self;
+    [_myTable registerClass:[MainTableViewCell class] forCellReuseIdentifier:@"MainTableViewCell"];
+    [_myTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [_myTable setAllowsSelection:NO];
+    // 定时器
+     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(shake) userInfo:nil repeats:YES];
+    
+    /*
     // 整个页面的滑动
     _wholeScroll  = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.view addSubview:_wholeScroll];
     _wholeScroll.scrollEnabled = YES;
     _wholeScroll.contentSize  = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT+100);
     _wholeScroll.backgroundColor = [UIColor whiteColor];
-    
+    _wholeScroll.translatesAutoresizingMaskIntoConstraints = YES;
     self.navigationController.navigationBarHidden = YES;
     
     
@@ -248,11 +336,11 @@
     [_wholeScroll addSubview:_visa_btn];
     
     _wholeScroll.contentSize  = CGSizeMake(SCREEN_WIDTH, ORINGIN_Y(_visa_btn)+VIEW_HEIGHT(_visa_btn)+5);
-    
-    
+    */
+
     // 下拉的贝赛尔曲线效果
   //  self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.wholeScroll target:self refreshAction:@selector(refreshTriggered) plist:@"storehouse" color:MAIN_COLOR lineWidth:1.5 dropHeight:80 scale:1 horizontalRandomness:150 reverseLoadingAnimation:YES internalAnimationFactor:0.5];
-    _wholeScroll.delegate = self;
+  //  _wholeScroll.delegate = self;
 
     // Do any additional setup after loading the view.
 }
@@ -280,7 +368,9 @@
     shake.duration = 0.1f;
     shake.repeatCount = 2;
     shake.autoreverses = YES;
-    [_hotel_view.redBagBtn.layer addAnimation:shake forKey:@"shake"];
+    UIButton* redBag = (UIButton*)[self.view viewWithTag:100];
+    [redBag.layer addAnimation:shake forKey:@"shake"];
+  //  [_hotel_view.redBagBtn.layer addAnimation:shake forKey:@"shake"];
 
 }
 

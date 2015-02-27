@@ -158,6 +158,7 @@
         // [wself.pathCover setBackgroundImage:[UIImage imageNamed:@"AlbumHeaderBackgrounImage"]];
     }];
      */
+    //self.navigationController.hidesBarsOnSwipe =YES;
 }
 
 

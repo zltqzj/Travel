@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MainPageViewController : UIViewController
+@interface MainPageViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property(weak,nonatomic) IBOutlet UIButton* cheapSaleToday_btn;// 今日特惠
 @property(weak,nonatomic) IBOutlet UIButton* department_btn;// 公寓
@@ -27,6 +27,7 @@
 @property(weak,nonatomic) IBOutlet UIButton* camelBook_btn;//骆驼书
 @property(weak,nonatomic) IBOutlet UIButton* visa_btn;//签证
 
+@property(strong,nonatomic) IBOutlet UITableView* myTable;
 
 @property(strong,nonatomic) UIScrollView* wholeScroll;
 @property(strong,nonatomic) UIScrollView* ad_scroll;

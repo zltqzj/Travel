@@ -4070,6 +4070,8 @@
 		1CE520B11A5CE0A000F02A2D /* voice_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE520AC1A5CE0A000F02A2D /* voice_blue@2x.png */; };
 		1CE520B41A5D065700F02A2D /* FindTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE520B31A5D065700F02A2D /* FindTableViewController.m */; };
 		1CE520B71A5D06B500F02A2D /* VoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE520B61A5D06B500F02A2D /* VoiceViewController.m */; };
+		1CE52A551A9EF3CE00B27205 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE52A531A9EF3CE00B27205 /* MainTableViewCell.m */; };
+		1CE52A561A9EF3CE00B27205 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CE52A541A9EF3CE00B27205 /* MainTableViewCell.xib */; };
 		1CE55B0B1A709935009571A8 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CE55B0A1A709935009571A8 /* city.plist */; };
 		1CE55B0E1A70A6C5009571A8 /* ZJCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE55B0D1A70A6C5009571A8 /* ZJCustomPicker.m */; };
 /* End PBXBuildFile section */
@@ -8196,6 +8198,9 @@
 		1CE520B31A5D065700F02A2D /* FindTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindTableViewController.m; sourceTree = "<group>"; };
 		1CE520B51A5D06B500F02A2D /* VoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceViewController.h; sourceTree = "<group>"; };
 		1CE520B61A5D06B500F02A2D /* VoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceViewController.m; sourceTree = "<group>"; };
+		1CE52A521A9EF3CE00B27205 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		1CE52A531A9EF3CE00B27205 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		1CE52A541A9EF3CE00B27205 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		1CE55B0A1A709935009571A8 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		1CE55B0C1A70A6C5009571A8 /* ZJCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomPicker.h; sourceTree = "<group>"; };
 		1CE55B0D1A70A6C5009571A8 /* ZJCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCustomPicker.m; sourceTree = "<group>"; };
@@ -9382,6 +9387,9 @@
 				1C6DFC111A8346A6004F80F8 /* MakeTravlView.xib */,
 				1C6DFC131A834798004F80F8 /* MakeTravlView.h */,
 				1C6DFC141A834798004F80F8 /* MakeTravlView.m */,
+				1CE52A521A9EF3CE00B27205 /* MainTableViewCell.h */,
+				1CE52A531A9EF3CE00B27205 /* MainTableViewCell.m */,
+				1CE52A541A9EF3CE00B27205 /* MainTableViewCell.xib */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -15758,6 +15766,7 @@
 				1C2876951A64B0B500B22345 /* icon_pull_refresh24.png in Resources */,
 				1C28754E1A64B0B500B22345 /* e006.png in Resources */,
 				1C482C8A1A5A4DF3004E338B /* bank_union_pay_logo.png in Resources */,
+				1CE52A561A9EF3CE00B27205 /* MainTableViewCell.xib in Resources */,
 				1C28779B1A64B0B500B22345 /* social_share_icon_qq.png in Resources */,
 				1C482F691A5A4DF3004E338B /* icon_brose_title_back.png in Resources */,
 				1C6D039A1A834CB0004F80F8 /* local_play_card_btn_pressed.png in Resources */,
@@ -16746,6 +16755,7 @@
 				1C4968E61A665DDF00E65524 /* SellView.m in Sources */,
 				1CDA33791A6E4C07001873AB /* CalendarHomeViewController.m in Sources */,
 				1C2B008F1A68FEA3000C0B12 /* UIViewExt.m in Sources */,
+				1CE52A551A9EF3CE00B27205 /* MainTableViewCell.m in Sources */,
 				1CDA33781A6E4C07001873AB /* CalendarDayModel.m in Sources */,
 				1CDA337C1A6E4C07001873AB /* CalendarMonthHeaderView.m in Sources */,
 				1C2EDB481A59085F00BF4B70 /* main.m in Sources */,
