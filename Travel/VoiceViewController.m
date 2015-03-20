@@ -12,7 +12,7 @@
 #import "CreateCustomTableViewController.h"
 #import "AppDelegate.h"
 
-//#import "CBStoreHouseRefreshControl.h"
+#import "ControlsViewController.h"
 
 @interface VoiceViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 //@property(weak,nonatomic) CBStoreHouseRefreshControl* storeHouseRefreshControl;
@@ -127,7 +127,9 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
    //   [self presentViewController:[[UINavigationController alloc] initWithRootViewController:[[CreateCustomTableViewController alloc] initWithStyle:UITableViewStyleGrouped]] animated:YES completion:nil];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    __typeof (&*self) __weak weakSelf = self;
 
+// [weakSelf.navigationController pushViewController:[[ControlsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
     [self.navigationController pushViewController:[[CreateCustomTableViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
 }
 

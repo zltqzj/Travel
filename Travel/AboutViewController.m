@@ -9,6 +9,8 @@
 #import "AboutViewController.h"
 #import "config.h"
 #import "Url.h"
+//#import <PgySDK/PgyManager.h>
+
 @interface AboutViewController ()
 
 @end
@@ -28,6 +30,8 @@
     _aboutTable.dataSource = self;
     [_aboutTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:_aboutTable];
+    
+   // [[PgyManager sharedPgyManager] checkUpdate];
     
     // Do any additional setup after loading the view.
 }
@@ -56,7 +60,9 @@
     return cell;
 }
 
-
+-(void)dealloc{
+    NSLog(@"关于界面销毁");
+}
 /*
 #pragma mark - Navigation
 

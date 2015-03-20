@@ -25,14 +25,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    [self.tabBarController.tabBar setHidden:NO];
+    [self.tabBarController.tabBar setHidden:YES];
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的";
-    [self.tabBarController.tabBar setHidden:NO];
+    [self.tabBarController.tabBar setHidden:YES];
 
     SETTING_NAVGATION_STYLE
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
@@ -179,24 +179,24 @@
     NSArray* descArr = _listData[indexPath.section];
     
     cell.textLabel.text = descArr[indexPath.row];
-      if(indexPath.section ==1 && indexPath.row == 0){ // 我的行程
-          cell.textLabel.textColor = ORANGE_COLOR;
-    }
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //NSLog(@"%ld,%ld",(long)indexPath.row,(long)indexPath.section);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (indexPath.section ==4 && indexPath.row == 0) {
-        AboutViewController* about = [[AboutViewController alloc ] init];
-        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-        [self.navigationController pushViewController:about animated:YES];
+//        AboutViewController* about = [[AboutViewController alloc ] init];
+//        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+//        [self.navigationController pushViewController:about animated:YES];
     }
     else if(indexPath.section ==1 && indexPath.row == 0){ // 我的行程
         MyTravelPlanViewController* myPlan = [[MyTravelPlanViewController alloc] init];
         [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-
+        NSLog(@"%@",cell.textLabel.text);
         [self.navigationController pushViewController:myPlan animated:YES];
     }
   
@@ -210,14 +210,8 @@
     return 50;
 }
 
- /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)dealloc{
+    NSLog(@"个人主页界面销毁");
 }
-*/
 
 @end

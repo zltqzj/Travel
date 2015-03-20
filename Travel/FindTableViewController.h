@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+ 
+@interface FindTableViewController : UITableViewController <UICollectionViewDelegate,UICollectionViewDataSource>
 
-@interface FindTableViewController : UITableViewController
-
-//@property(strong,nonatomic) IBOutlet UITableView* findTable;
-
+@property(weak,nonatomic) IBOutlet UICollectionView* collectionView;
+@property(strong,nonatomic) NSArray* imageArray;
+@property(strong,nonatomic) NSArray* descArray;
+//@property(weak,nonatomic) IBOutlet MTBlockTableView* diaryTable;
 
 @end

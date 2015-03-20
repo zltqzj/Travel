@@ -10,6 +10,8 @@
 #import "config.h"
 #import "TabbarViewController.h"
 #import "Url.h"
+#import <PgySDK/PgyManager.h>
+
 @interface AppDelegate ()
 
 @end
@@ -29,6 +31,26 @@
         
     }];
     
+    
+    TabbarViewController* tabbar = viewOnSb(@"tabbar");
+    self.window.rootViewController=tabbar;
+
+    
+//    [self.window addSubview:self.window.rootViewController.view];
+//    //设置splashVC，显示splashVC.view。不使用其他splashVC的功能
+//    self.splashViewController=[[UIViewController alloc]init];
+//    NSString * splashImageName=@"splash.jpg";
+//    if(self.window.bounds.size.height>480){
+//        splashImageName=@"splashR4.jpg";
+//    }
+//
+//    
+//    self.splashViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:splashImageName]];
+//    //把splashVC添加进去
+//    [self.window addSubview:self.splashViewController.view];
+//    //⬇️ 让splashimage显示2s，让用户看一眼得了。
+//    [self performSelector:@selector(splashAnimate:) withObject:@0.0 afterDelay:2.0];
+
     
     
     //1.创建消息上面要添加的动作(按钮的形式显示出来)
@@ -75,7 +97,34 @@
     notification.category = @"alert";
     [[UIApplication sharedApplication]  scheduleLocalNotification:notification];
     */
+    
+   // 蒲公英崩溃收集代码
+    // [[PgyManager sharedPgyManager] setEnableFeedback:NO]; //关闭用户反馈功能(默认开启)：
+    //设置用户反馈界面激活方式为三指拖动
+    //[[PgyManager sharedPgyManager] setFeedbackActiveType:kPGYFeedbackActiveTypeThreeFingersPan];
+    //设置用户反馈界面激活方式为摇一摇
+    //[[PgyManager sharedPgyManager] setFeedbackActiveType:kPGYFeedbackActiveTypeShake];
+    // 上述自定义必须在调用 [[PgyManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"] 前设置。
+    [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+
+   // 在需要检查更新的低吗文件中引入头文件：
+    //[[PgyManager sharedPgyManager] checkUpdate];
+    
     return YES;
+}
+
+
+-(void) splashAnimate:(NSNumber *)alpha{
+    // ⬇️ 只能用UIViewAnimationOptionCurveEaseInOut和ViewAnimationOptionTransitionNone两种效果
+    UIView * splashView=self.splashViewController.view;
+    [UIView animateWithDuration:1.0 animations:^{
+        splashView.transform=CGAffineTransformScale(splashView.transform, 1.5, 1.5);
+        splashView.alpha=alpha.floatValue;
+    } completion:^(BOOL finished) {
+        //ARC通过赋值nil释放内存，动画中不能removeFromSuperview.
+        [splashView removeFromSuperview];
+        self.splashViewController=nil;
+    }];
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{

@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImagePlayerView.h"
+#import "AsyncScrollView.h"
+@interface MainTableViewCell : UITableViewCell <UIScrollViewDelegate,ImagePlayerViewDelegate>
 
-@interface MainTableViewCell : UITableViewCell
+@property(strong,nonatomic) IBOutlet AsyncScrollView *sv;
+
+@property (nonatomic, strong) NSTimer *timer;
+
+@property (nonatomic, strong) NSArray *imageURLs;
+
+@property(strong,nonatomic) IBOutlet UIPageControl* pageControl;
+
+@property(weak,nonatomic) IBOutlet UIScrollView* adScroll;
 
 @property(weak,nonatomic) IBOutlet UIButton* redBag;
 

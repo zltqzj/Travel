@@ -4,7 +4,7 @@ pod 'SDWebImage', '~>3.6'
 #pod "TSMessages"
 #pod 'CBStoreHouseRefreshControl'
 #pod 'JGProgressHUD'
-#pod 'RETableViewManager', '~> 1.5.14'
+pod 'RETableViewManager', '~> 1.5'
 #pod "CNPGridMenu"
 #pod 'SKSplashView'
 pod 'ActionSheetPicker-3.0', '~> 1.3.10'

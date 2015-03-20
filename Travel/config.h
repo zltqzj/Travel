@@ -4,7 +4,7 @@
 //
 //  Created by ZKR on 1/4/15.
 //  Copyright (c) 2015 ZKR. All rights reserved.
-//
+//   http://zhangshangxindai.duapp.com/Travel/ios_app/productionPush/push.php
 
 #ifndef Travel_config_h
 #define Travel_config_h
@@ -113,8 +113,6 @@
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 
-// 设置导航栏格式
-#define SETTING_NAVGATION_STYLE [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,[UIColor whiteColor], UITextAttributeTextShadowColor,[NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,[UIFont fontWithName:@"Arial-Bold" size:0.0], UITextAttributeFont,nil]];
 
 // 持久化存储用户ID 和邮箱
 #define CURRENT_USER_ID [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]
@@ -150,7 +148,9 @@
 #define MAIN_COLOR  RGB(59, 197, 204)
 #define TABBAR_COLOR RGB(18, 18, 18)
 
-
+// 设置导航栏格式
+//#define SETTING_NAVGATION_STYLE [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,[UIColor whiteColor], UITextAttributeTextShadowColor,[NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,[UIFont fontWithName:@"Arial-Bold" size:0.0], UITextAttributeFont,nil]];
+#define SETTING_NAVGATION_STYLE [self.navigationController.navigationBar setBarTintColor:MAIN_COLOR]; [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Arial-Bold" size:0.0], NSFontAttributeName, nil]];
 
 
 #endif

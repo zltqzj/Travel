@@ -10,6 +10,8 @@
 #define Travel_Url_h
 
 
+#define PGY_APP_ID  @"c9980b0fb573e7761349895ad3386eaf"
+
 //  服务器推送地址 http://zhangshangxindai.duapp.com/Travel/ios_app/productionPush/push.php
 #define UPDATE_URL @"http://zhangshangxindai.duapp.com/Travel/ios_app/ios_update.php"
 

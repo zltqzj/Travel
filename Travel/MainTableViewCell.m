@@ -7,12 +7,25 @@
 //
 
 #import "MainTableViewCell.h"
-
+#import "config.h"
 @implementation MainTableViewCell
+
+
 
 - (void)awakeFromNib {
     // Initialization code
+ 
+    
+    _imageURLs = @[@"bg_product_moren",@"bg_pic_header_default",@"bg_zhaomu",@"bg_ddr_list_default"];
+ 
+ 
+    _sv = [[AsyncScrollView alloc] initWithFrame:CGRectMake(8, 8, SCREEN_WIDTH-16, 110) andImageArray:_imageURLs];
+    [self addSubview:_sv];
+    [_sv addTimer];
 }
+
+
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -30,5 +43,8 @@
 
     // Configure the view for the selected state
 }
+
+
+
 
 @end

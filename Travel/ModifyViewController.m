@@ -88,6 +88,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
 }
-
+-(void)dealloc{
+    NSLog(@"修改帐号界面销毁");
+}
 
 @end

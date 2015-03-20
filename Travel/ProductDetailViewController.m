@@ -191,7 +191,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-//[_wholeScroll setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT+100)];
 
 }
 
@@ -258,6 +257,10 @@
     cell.detailTextLabel.text = _listData[indexPath.row][1];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
     return cell;
+}
+
+-(void)dealloc{
+    NSLog(@"产品详情界面销毁");
 }
 
 @end

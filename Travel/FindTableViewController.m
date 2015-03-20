@@ -8,6 +8,9 @@
 
 #import "FindTableViewController.h"
 #import "config.h"
+#import "FindCollectionViewCell.h"
+#import "DiaryTableViewCell.h"
+#import "ProfileViewController.h"
 @interface FindTableViewController ()
 
 @end
@@ -20,18 +23,62 @@
     
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    FindCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FindCollectionViewCell" forIndexPath:indexPath];
+    cell.iconImage.image = [UIImage imageNamed:_imageArray[indexPath.row]];
+    cell.descLabel.text = _descArray[indexPath.row];
+    return cell;
+}
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return _imageArray.count;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     SETTING_NAVGATION_STYLE
     [self.tabBarController.tabBar setHidden:NO];
 
     self.title = @"发现";
-  //  _findTable = self.tableView;
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
+
+    if(SCREEN_WIDTH<321){
+        flowLayout.itemSize=CGSizeMake(72,72 ); //The default size to use for cells.
+        flowLayout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 2);
+    }
+    else{
+        flowLayout.itemSize=CGSizeMake(80,80 );
+        flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 0, 5);
+
+    }
+
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    _imageArray  = @[@"destination_tab_must_read",@"destination_tab_city",@"destination_tab_food",@"destination_tab_shopping",@"destination_tab_plan",@"destination_tab_activity",@"destination_tab_traffic",@"destination_tab_remote"];
+    _descArray = @[@"出行必读",@"城市攻略",@"美食",@"购物",@"行程",@"活动",@"本地交通",@"如何到达"];
+    _collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    [_collectionView registerClass:[FindCollectionViewCell class] forCellWithReuseIdentifier:@"FindCollectionViewCell"];
+    [_collectionView setCollectionViewLayout:flowLayout];
+    
+   
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mainpage_my_normal"] style:UIBarButtonItemStylePlain target:self action:@selector(my:)];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+}
+
+
+// 分享。
+-(void)my:(id)sender{
+    ProfileViewController* profile = [[ProfileViewController alloc] init];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController pushViewController:profile animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,28 +87,29 @@
 }
 
 #pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    if (tableView.tag ==100) {
+        return 3;
+
+    }
+    else{
+        return 3;
+    }
 }
-*/
+//
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView.tag ==100) {
+        return 2;
+    }
+    // Return the number of rows in the section.
+    return 1;
+}
+
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
