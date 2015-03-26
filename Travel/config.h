@@ -152,5 +152,12 @@
 //#define SETTING_NAVGATION_STYLE [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,[UIColor whiteColor], UITextAttributeTextShadowColor,[NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,[UIFont fontWithName:@"Arial-Bold" size:0.0], UITextAttributeFont,nil]];
 #define SETTING_NAVGATION_STYLE [self.navigationController.navigationBar setBarTintColor:MAIN_COLOR]; [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Arial-Bold" size:0.0], NSFontAttributeName, nil]];
 
+// 查看一段代码运行的时间
+#define TICK   NSDate *startTime = [NSDate date]
+#define TOCK   NSLog(@"Time: %f", -[startTime timeIntervalSinceNow])
+//调用方式
+//TICK
+////do your work here
+//TOCK
 
 #endif
