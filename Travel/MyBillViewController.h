@@ -9,16 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "SellView.h"
 #import "MXPullDownMenu.h"
+#import "DOPDropDownMenu.h"
 
-@interface MyBillViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,MXPullDownMenuDelegate>
+@interface MyBillViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, DOPDropDownMenuDataSource,DOPDropDownMenuDelegate>
 
-@property(strong,nonatomic)  UIScrollView* wholeScroll;
-@property(strong,nonatomic)   UITableView* billTable;
+ @property(strong,nonatomic)   UITableView* billTable;
 @property(strong,nonatomic) NSMutableArray* listData;
 
-@property(strong,nonatomic) SellView* sellView1;
-@property(strong,nonatomic) SellView* sellView2;
-@property(strong,nonatomic) SellView* sellView3;
-@property(strong,nonatomic) SellView* sellView4;
+@property (nonatomic, strong) NSArray *classifys;
+@property (nonatomic, strong) NSArray *cates;
+@property (nonatomic, strong) NSArray *movices;
+@property (nonatomic, strong) NSArray *hostels;
+@property (nonatomic, strong) NSArray *areas;
+@property (nonatomic, strong) NSArray *sorts;
+
 
 @end

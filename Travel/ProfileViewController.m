@@ -14,6 +14,9 @@
 #import "ModifyViewController.h"
 #import "AboutViewController.h"
 #import "MyTravelPlanViewController.h"
+#import "UIButton+Bootstrap.h"
+#import "LoginViewController.h"
+#import "RegistViewController.h"
 @interface ProfileViewController ()<PathCoverDelegate>
 
 @property (nonatomic, strong) XHPathCover *pathCover;
@@ -60,7 +63,15 @@
     _pathCover.userNameLabel.text = @"赵健";
     _pathCover.descLabel.text = @"18658054127";
     _pathCover.isZoomingEffect = YES;
-    _profileTable.tableHeaderView = self.pathCover;
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"isLogin"] isEqualToString:@"Y"]) {
+        _profileTable.tableHeaderView = self.pathCover;
+
+    }
+    else{
+        _profileTable.tableHeaderView = [self createBasicHeaderView];
+
+    }
     _pathCover.pathDelegate = self;
     
     __weak ProfileViewController *wself = self;
@@ -73,6 +84,52 @@
     }];
     
     // Do any additional setup after loading the view.
+}
+
+
+-(UIView*)createBasicHeaderView{
+    UIView* bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150)];
+    UIImageView* bgImageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"member_avatar_bg"]];
+    bgImageview.frame = bgView.bounds;
+    [bgView addSubview:bgImageview];
+    UIButton* loginBtn  = [UIButton buttonWithType:UIButtonTypeCustom];
+    [loginBtn addTarget:self action:@selector(loginEvent:) forControlEvents:UIControlEventTouchUpInside];
+    loginBtn.tag = 100;
+    int width = 140;
+    int height = 50;
+    [loginBtn setFrame:CGRectMake(SCREEN_WIDTH/4 - width/2, VIEW_HEIGHT(bgView)/2-height/2, width, height)];
+    [loginBtn successStyle];
+
+    [bgView addSubview:loginBtn];
+    [loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+    
+    UIButton* registBtn  = [UIButton buttonWithType:UIButtonTypeCustom];
+    [registBtn setFrame:CGRectMake(SCREEN_WIDTH*3/4 - width/2, VIEW_HEIGHT(bgView)/2-height/2, width, height)];
+    [registBtn addTarget:self action:@selector(loginEvent:) forControlEvents:UIControlEventTouchUpInside];
+    registBtn.tag = 101;
+    [registBtn warningStyle];
+    
+    [bgView addSubview:registBtn];
+    [registBtn setTitle:@"注册" forState:UIControlStateNormal];
+    return bgView;
+    
+}
+
+-(void)loginEvent:(id)sender{
+    UIButton* btn = (id)sender;
+    if (btn.tag ==100) {  // 登录
+        LoginViewController* login = viewOnSb(@"login") ;//[[LoginViewController alloc] init];
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:login];
+        [nav.navigationBar setTintColor:[UIColor whiteColor]];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+    else{  // 注册
+        RegistViewController* regist = viewOnSb(@"regist");
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:regist];
+        [nav.navigationBar setTintColor:[UIColor whiteColor]];
+        [self presentViewController:nav animated:YES completion:nil];
+
+    }
 }
 
 

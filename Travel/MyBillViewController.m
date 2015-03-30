@@ -11,6 +11,7 @@
 #import "BillCell.h"
 #import "ProductDetailViewController.h"
 #import "CreateCustomTableViewController.h"
+
 @implementation MyBillViewController
 
 -(void)viewWillAppear:(BOOL)animated
@@ -20,13 +21,11 @@
 }
 
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     SETTING_NAVGATION_STYLE
     self.title = @"特卖";
-    self.view.backgroundColor = MAIN_COLOR;
+    self.view.backgroundColor =[UIColor whiteColor];
     [self.tabBarController.tabBar setHidden:NO];
  
     
@@ -39,64 +38,46 @@
     
     NSArray *testArray = @[ @[ @"全部海南", @"三亚", @"天涯海角", @"海口", @"亚龙湾" , @"蜈支洲岛"], @[@"推荐", @"30天销量",@"满意度",@"价格由高到低",@"价格由低到高"], @[@"筛选"] ];
     
+    // 数据
+//    self.classifys = @[@"美食",@"今日新单",@"电影",@"酒店"];
+//    self.cates = @[@"自助餐",@"快餐",@"火锅",@"日韩料理",@"西餐",@"烧烤小吃"];
+//    self.movices = @[@"内地剧",@"港台剧",@"英美剧"];
+//    self.hostels = @[@"经济酒店",@"商务酒店",@"连锁酒店",@"度假酒店",@"公寓酒店"];
+//    self.areas = @[@"全城",@"芙蓉区",@"雨花区",@"天心区",@"开福区",@"岳麓区"];
+//    self.sorts = @[@"默认排序",@"离我最近",@"好评优先",@"人气优先",@"最新发布"];
     
+    // 第一个 定制游，自助游，周边游，跟团游
+    self.movices = @[@"定制游",@"周边游",@"跟团游"];
+    // 第二个  @"全部海南", @"三亚", @"天涯海角", @"海口", @"亚龙湾" , @"蜈支洲岛"
+    self.areas = @[@"全部海南", @"三亚", @"天涯海角", @"海口", @"亚龙湾" , @"蜈支洲岛"];
 
+    //第三个 @"默认排序",@"离我最近",@"好评优先",@"人气优先",@"最新发布"
+    self.sorts = @[@"默认排序",@"离我最近",@"好评优先",@"人气优先",@"最新发布"];
+
+    // 添加下拉菜单
+    DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 64) andHeight:44];
     
-    _wholeScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-44)];
-    _wholeScroll.backgroundColor = MAIN_COLOR;
-    [self.view addSubview:_wholeScroll];
-    
-    MXPullDownMenu *menu = [[MXPullDownMenu alloc] initWithArray:testArray selectedColor:MAIN_COLOR];
     menu.delegate = self;
-    menu.frame = CGRectMake(0, 0, SCREEN_WIDTH, menu.frame.size.height);
-    [_wholeScroll addSubview:menu];
-    /*
-    // 四个view
-    NSInteger hotelWidth = (SCREEN_WIDTH-15) /2;
-    
-    _sellView1   = [[[NSBundle mainBundle] loadNibNamed:@"SellView" owner:self options:nil] lastObject];
-    _sellView1.frame = CGRectMake(5, 5, hotelWidth, hotelWidth*0.75);
-    _sellView1.backgroundColor = [UIColor orangeColor];
-    [_wholeScroll addSubview:_sellView1];
-    NSArray* arr = _listData[1];
-    [_sellView1.titleLabel setText: @"天涯海角"];
-  //  _sellView1.imageview.image = [UIImage imageNamed:@"voice_hotel_checked"];
-    
-    
-    _sellView2 =[[[NSBundle mainBundle] loadNibNamed:@"SellView" owner:self options:nil] lastObject];
-    _sellView2.frame = CGRectMake(SCREEN_WIDTH-5-hotelWidth, 5, hotelWidth, hotelWidth*0.75);
-    [_wholeScroll addSubview:_sellView2];
-    //_sellView2.imageview.image = [UIImage imageNamed:@"voice_hotel_checked"];
+    menu.dataSource = self;
+    [self.view addSubview:menu];
 
-
-    _sellView3 = [[[NSBundle mainBundle] loadNibNamed:@"SellView" owner:self options:nil] lastObject];
-    _sellView3.frame = CGRectMake(5, ORINGIN_Y(_sellView1)+VIEW_HEIGHT(_sellView1)+5, hotelWidth, hotelWidth*0.75);
-    [_wholeScroll addSubview:_sellView3];
     
-    
-    _sellView4 = [[[NSBundle mainBundle] loadNibNamed:@"SellView" owner:self options:nil] lastObject];
-    _sellView4.frame = CGRectMake(SCREEN_WIDTH-5-hotelWidth, ORINGIN_Y(_sellView1)+VIEW_HEIGHT(_sellView1)+5, hotelWidth, hotelWidth*0.75);
-    [_wholeScroll addSubview:_sellView4];
-    [_sellView4.priceLabel setText: @"天涯海角"];
-*/
-    
-    _billTable  = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH,  _listData.count*60) style:UITableViewStylePlain];
+    _billTable  = [[UITableView alloc] initWithFrame:CGRectMake(0, 108, SCREEN_WIDTH,  SCREEN_HEIGHT-108-50) style:UITableViewStylePlain];
     _billTable.delegate = self;
     _billTable.dataSource = self;
-    [_billTable setScrollEnabled:NO];
-    [_billTable registerClass:[BillCell class] forCellReuseIdentifier:@"BillCell"];
-    [_wholeScroll addSubview:_billTable];
-    [_wholeScroll setScrollEnabled:YES];
-    [_wholeScroll setContentSize:CGSizeMake(SCREEN_WIDTH,  _listData.count*60 )];
+     [_billTable registerClass:[BillCell class] forCellReuseIdentifier:@"BillCell"];
+    [self.view addSubview:_billTable];
+ 
     [self setExtraCellLineHidden:_billTable];
     
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
     
 }
 
 -(void)setExtraCellLineHidden: (UITableView *)tableView{
     UIView *view = [UIView new];
-    view.backgroundColor =MAIN_COLOR;// [UIColor whiteColor];
+    view.backgroundColor =  [UIColor whiteColor];
     [tableView setTableFooterView:view];
 }
 
@@ -108,12 +89,80 @@
 }
 
 
+
+
+#pragma  mark - 
+- (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
+{
+    return 3;
+}
+
+- (NSInteger)menu:(DOPDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column
+{
+    if (column == 0) {
+        return self.movices.count;
+    }else if (column == 1){
+        return self.areas.count;
+    }else {
+        return self.sorts.count;
+    }
+}
+
+- (NSString *)menu:(DOPDropDownMenu *)menu titleForRowAtIndexPath:(DOPIndexPath *)indexPath
+{
+    if (indexPath.column == 0) {
+        return self.movices[indexPath.row];
+    } else if (indexPath.column == 1){
+        return self.areas[indexPath.row];
+    } else {
+        return self.sorts[indexPath.row];
+    }
+}
+
+- (NSInteger)menu:(DOPDropDownMenu *)menu numberOfItemsInRow:(NSInteger)row column:(NSInteger)column
+{
+//    if (column == 0) {
+//        if (row == 0) {
+//            return self.cates.count;
+//        } else if (row == 2){
+//            return self.movices.count;
+//        } else if (row == 3){
+//            return self.hostels.count;
+//        }
+//    }
+    return 0;
+}
+
+- (NSString *)menu:(DOPDropDownMenu *)menu titleForItemsInRowAtIndexPath:(DOPIndexPath *)indexPath
+{
+//    if (indexPath.column == 0) {
+//        if (indexPath.row == 0) {
+//            return self.cates[indexPath.item];
+//        } else if (indexPath.row == 2){
+//            return self.movices[indexPath.item];
+//        } else if (indexPath.row == 3){
+//            return self.hostels[indexPath.item];
+//        }
+//    }
+    return nil;
+}
+
+- (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath
+{
+    if (indexPath.item >= 0) {
+      //  NSLog(@"点击了 %ld - %ld - %ld 项目",indexPath.column,indexPath.row,indexPath.item);
+    }else {
+      //  NSLog(@"点击了 %ld - %ld 项目",indexPath.column,indexPath.row);
+    }
+}
+
+
+
+#pragma mark - UITableview datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return  _listData.count;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BillCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BillCell" forIndexPath:indexPath];
@@ -130,6 +179,7 @@
     return 60;
 }
 
+#pragma  mark - UITableview delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ProductDetailViewController* productDetail =[[ProductDetailViewController alloc] init];// viewOnSb(@"productDetail");
@@ -138,18 +188,7 @@
     
 }
 
-#pragma mark - MXPullDownMenuDelegate
-- (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row{
-    
-}
--(void)ScrollEnable:(BOOL)scrollEnable{
-    if (scrollEnable ==NO) {
-        _wholeScroll.scrollEnabled = NO;
-    }
-    else{
-        _wholeScroll.scrollEnabled = YES;
-    }
-}
+
 
 
 @end
